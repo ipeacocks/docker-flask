@@ -50,7 +50,7 @@
         <div class="panel-heading">
           <span class="text-muted date_text">{{ message.message_date.strftime("%d/%m/%y %H:%M") }}</span>
           <br>
-          <p>{{ message.message_body }}</p>
+          {{ message.message_body }}
         </div>
       </div>
       {% endfor %}

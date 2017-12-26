@@ -20,7 +20,7 @@ from models import Messages
 ################
 
 def list_messages():
-    return db.session.query(Messages).order_by(Messages.message_date.asc())
+    return db.session.query(Messages).order_by(Messages.message_date.desc())
 
 
 @app.route("/", methods=['GET','POST'])
