@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Simple Message App</title>
+
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
+    <link href="https://bootswatch.com/3/flatly/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sticky-footer.css') }}">
+
+  </head>
+
+  <body>
+    <form class="form-message row" role="form" method="post" action="/">
+      {{ form.csrf_token }}
+      <!-- Begin page content -->
+      <div class="container">
+        <div class="page-header">
+          <h1>Simple Message App</h1>
+        </div>
+        <p class="lead">Type your message here:</p>
+          {{ form.message(placeholder="your message", class="form-control") }}
+        <span class="error">
+          {% if form.message.errors %}
+            {% for error in form.message.errors %}
+              {{ error }}
+            {% endfor %}
+          {% endif %}
+        </span>
+        <br>
+        <button class="btn btn-primary button_style" type="submit">
+          Submit <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+    </form>
+
+    <div class="container">
+      <br>
+      {% for message in messages %}
+      <div class="well well-sm">
+        <div class="panel-heading">
+          <span class="text-muted date_text">{{ message.message_date.strftime("%d/%m/%y %H:%M") }}</span>
+          <br>
+          <p>{{ message.message_body }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">&copy; <a href="https://github.com/ipeacocks">ipeacocks</a> 2018</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

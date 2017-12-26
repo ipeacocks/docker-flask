@@ -1,0 +1,12 @@
+.error {
+    color: #a94443;
+    font-size: .8em;
+}
+
+.button_style {
+    width: 120px !important;
+}
+
+.date_text {
+    font-size: .8em;
+}
