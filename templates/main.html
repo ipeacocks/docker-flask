@@ -9,44 +9,38 @@
     <meta name="author" content="">
 
     <title>Simple Message App</title>
-
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"> -->
-    <link href="https://bootswatch.com/3/flatly/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <!-- Flatly theme from https://bootswatch.com -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sticky-footer.css') }}">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="https://getbootstrap.com/docs/3.3/assets/js/ie-emulation-modes-warning.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   </head>
 
   <body>
-      <!-- Begin page content -->
-      <div class="container">
-        <div class="page-header">
-          <h1>Simple Message App</h1>
-        </div>
-        <div class="add-message">
-          <form class="form-message" role="form" method="post" action="/">
-            {{ form.csrf_token }}
-            <p class="lead">Type your message here:</p>
-            {{ form.message(placeholder="your message", class="form-control") }}
-            <span class="error">
-              {% if form.message.errors %}
-                {% for error in form.message.errors %}
-                  {{ error }}
-                {% endfor %}
-              {% endif %}
-            </span>
-            <br>
-            <button class="btn btn-primary button_style" type="submit">
-              Submit <span class="glyphicon glyphicon-chevron-right"></span>
-            </button>
-          </form>
-        </div>
+    <div class="container">
+      <div class="page-header">
+        <h1>Simple Message App</h1>
       </div>
+      <div class="add-message">
+        <form class="form-message" role="form" method="post" action="/">
+          {{ form.csrf_token }}
+          <p class="lead">Type your message here:</p>
+          {{ form.message(placeholder="your message", class="form-control") }}
+          <span class="error">
+            {% if form.message.errors %}
+              {% for error in form.message.errors %}
+                {{ error }}
+              {% endfor %}
+            {% endif %}
+          </span>
+          <br>
+          <button class="btn btn-primary button_style" type="submit">
+            Submit <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </form>
+      </div>
+    </div>
 
     <div class="container">
       <br>
@@ -66,6 +60,9 @@
         <p class="text-muted">&copy; <a href="https://github.com/ipeacocks">ipeacocks</a> 2018</p>
       </div>
     </footer>
+
+    <!-- scripts -->
+    <script src="{{ url_for('static', filename='js/ie-emulation-modes-warning.js') }}"></script>
 
   </body>
 </html>
