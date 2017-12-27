@@ -5,8 +5,13 @@
 
 .button_style {
     width: 120px !important;
+/*    height: 40px;*/
 }
 
 .date_text {
     font-size: .8em;
+}
+
+.topic {
+    margin-top: 50px;
 }
