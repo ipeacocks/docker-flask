@@ -1,11 +1,9 @@
 # Simple Message App
 
 Simple Python/Flask app for demonstrating Docker/Kubernetes facilities
-
 <p align="center">
   <img src="screenshots/simple_message_app.png" />
 </p>
-
 Written on:
 
 * Bootstrap 4
@@ -15,7 +13,7 @@ Written on:
 * WTForms
 * SQLite
 
-## Installation
+### Installation
 
 Clone code:
 ```
