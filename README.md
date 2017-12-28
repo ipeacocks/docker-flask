@@ -13,7 +13,7 @@ Written on:
 * WTForms
 * SQLite
 
-### Installation
+## Installation
 
 Clone code:
 ```
@@ -42,7 +42,7 @@ And finally launch:
 ```
 Then you can login using link http://localhost:5000.
 
-## Docker
+### Docker
 
 Alternatively you can run this app in docker. Pull image from Docker Hub:
 ```
