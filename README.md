@@ -22,12 +22,13 @@ Clone code:
 Simply create virtualenv:
 ```
 # cd docker-flask
-# virtualenv --python=/usr/local/bin/python3 --no-site-packages env
+# virtualenv --no-site-packages env
 ```
 Activate virtual env:
 ```
 # source env/bin/activate
 ```
+Make sure that virtualenv created env with `python3`.    
 That's almost it. Use `requirments.txt` to setup all python dependencies:
 ```
 # pip install -r requirements.txt
